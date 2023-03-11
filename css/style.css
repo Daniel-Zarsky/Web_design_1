@@ -1,8 +1,101 @@
 /*
- * Login:
+ * Login:xzarsk04
  *
  * Doplnte sve reseni.
  *
  * Nezapomente pridat strucne hromadne komentare pro pravidla jednotlivych sekci
  * a pro netrivialni useky kodu.
  */
+ body{
+    min-width: 768px;
+    max-width: 12000px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: white;
+    position: relative;
+    overflow: auto;
+ }
+ header {
+    
+    top: 0; left: 0;
+    width: 100%;
+    min-height: 400px;
+    z-index: 1;
+    
+    display: grid; 
+    place-items: center;
+    grid-template-columns: 50% 50%; 
+    grid-template-rows: 20% 20% 40% 20%; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "contacts networks"
+      "logo header-menu"
+      "header-title header-title"
+      "header-form header-form"; 
+ }
+
+.contacts { grid-area: contacts; }
+.networks { grid-area: networks; 
+}
+.phone {
+    color: red;
+ }
+.networks a:link {
+    color: black;
+}
+.mail a:link {
+    color: black;
+}
+.mail {
+    color: red;
+}
+.logo { grid-area: logo; 
+    font-family: Bebas Neue ;
+    font-size: 32px;
+    margin-left: 40px;}
+.header-menu { grid-area: header-menu; }
+
+.header-title { grid-area: header-title; 
+                float:right;
+                background-image: url("/img/header.jpg");
+                background-size: cover; /* optional */
+                background-position: center; /* optional */
+            }
+
+p .sub-header-title {
+    color:red;
+}
+.header-form { grid-area: header-form; }
+
+.networks {
+    
+    margin: 10px;
+
+}
+
+.main-title:visited{
+    color: black;
+}
+.first-letter{
+    color: red;
+}
+nav { 
+    font-size: 14px;
+    letter-spacing: .05em;
+    word-spacing: 20px;
+    margin-right: 40px;
+}
+
+ul.vertlist li { 
+    display: inline-block;
+     }
+ul.tours-button li { 
+        display: block;
+    }
+nav ul li ul {
+    display:none;
+    }
+
+ nav ul li:hover > ul {display:list-item;}
+
+ 
