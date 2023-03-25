@@ -57,13 +57,13 @@
             <span>Request has been sent.</span>
         </div>
     </div>
-    <header>
+    <header id="header">
+        <div id="header-menu">
             <div class="logo">
-                <a href="index.html" class="main-title"><span class="first-letter">C</span>rossroads Motel</a>
+                <a href="index.html">Crossroads Motel</a>
             </div>
-            
             <div class="contacts">
-                <span class="phone"><i class="fas fa-phone-square-alt"></i></i></span>+52 541 141 423
+                <span class="phone"><i class="fas fa-phone-square-alt"></i>+52 541 141 423</span>
                 <span class="mail"><i class="fas fa-envelope-square"></i><a href="mailto:bettercall@ditrich.mx">bettercall@ditrich.mx</a></span>
             </div>
             <div class="networks">
@@ -72,15 +72,14 @@
                 <span class="instagram"><a href="https://www.youtube.com/watch?v=kAvvoToKmrM"><i class="fab fa-instagram"></i></a></span>
                 <span class="youtube"><a href="https://www.youtube.com/watch?v=LwsgYoahVVs"><i class="fab fa-youtube"></i></a></span>
             </div>
-       
-            <nav class="header-menu">
-                <ul class="vertlist">
+            <nav>
+                <ul>
                     <li><a href="">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li>
+                    <li id="tours-button">
                         <a href="#" onclick="openToursMenu(); return false;">Tours</a>
-                        <ul class="tours-button">
+                        <ul>
                             <li><a href="#tour1">Tour 1</a></li>
                             <li><a href="#tour2">Tour 2</a></li>
                             <li><a href="#tour3">Tour 3</a></li>
@@ -90,14 +89,14 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-        
-        <div class="header-title">
+        </div>
+        <div id="header-title">
             <p>
                 <span>You are invited!</span>
-                <span class="sub-header-title">We know how to please you</span>
+                <span>We know how to please you</span>
             </p>
         </div>
-        <div class="header-form">
+        <div id="header-form">
             <form method="post" onsubmit="toast(); return false;">
                 <select name="room">
                     <option value="economy">Economy</option>

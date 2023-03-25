@@ -1,101 +1,632 @@
 /*
- * Login:xzarsk04
- *
- * Doplnte sve reseni.
- *
- * Nezapomente pridat strucne hromadne komentare pro pravidla jednotlivych sekci
- * a pro netrivialni useky kodu.
- */
- body{
+* Login:xzarsk04
+*
+* Doplnte sve reseni.
+*
+* Nezapomente pridat strucne hromadne komentare pro pravidla jednotlivych sekci
+* a pro netrivialni useky kodu.
+*/
+
+body{
+    width: auto;
     min-width: 768px;
     max-width: 12000px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-bottom: 80px;
+    background-color: white;
+    overflow: auto;
+    font-family: Poppins, serif;
+    font-size: 16px;
+    line-height: 1.5;
+
+}
+main section{
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+.heading{
+    line-height: 0.75;
+}
+#heisenberg {
+    display:none;
+}
+.logo {
+    font-family: Bebas Neue, serif;
+    grid-area: logo;
+    height: 80px;
+}
+.contacts {
+    font-family: Poppins, serif;
+}
+
+h2{
+    font-size: 32px;
+}
+
+#header {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 1fr 0.4fr 3.6fr 1.5fr;
+    align-content: space-between;
+
+}
+
+#header-menu{
+    z-index: 2;
     background-color: white;
     position: relative;
-    overflow: auto;
- }
- header {
-    
-    top: 0; left: 0;
+    margin-top:10px;
+    border-radius: 5px;
+    grid-area: 1 / 2 / 3 / 3;
+    max-width: 1000px;
     width: 100%;
-    min-height: 400px;
-    z-index: 1;
-    
-    display: grid; 
-    place-items: center;
-    grid-template-columns: 50% 50%; 
-    grid-template-rows: 20% 20% 40% 20%; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-      "contacts networks"
-      "logo header-menu"
-      "header-title header-title"
-      "header-form header-form"; 
- }
-
-.contacts { grid-area: contacts; }
-.networks { grid-area: networks; 
+    display: grid;
+    grid-template-columns: 1fr 1.1fr ;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+      "contact network"
+      "logo nav";
 }
-.phone {
-    color: red;
- }
-.networks a:link {
-    color: black;
+#header-menu a {
+    text-decoration: none;
+    color:black;
 }
-.mail a:link {
-    color: black;
-}
-.mail {
-    color: red;
-}
-.logo { grid-area: logo; 
-    font-family: Bebas Neue ;
+.logo {
+    /* písmo: 32px
+    levý okraj: 40px */
+    min-height: 80px;
+    height: 100%;
     font-size: 32px;
-    margin-left: 40px;}
-.header-menu { grid-area: header-menu; }
-
-.header-title { grid-area: header-title; 
-                float:right;
-                background-image: url("/img/header.jpg");
-                background-size: cover; /* optional */
-                background-position: center; /* optional */
-            }
-
-p .sub-header-title {
-    color:red;
+    grid-area: logo;
+    border-top: gray solid 2px;
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff;
 }
-.header-form { grid-area: header-form; }
+.logo::first-letter {
+
+    color:red;
+
+}
+.logo a {
+    margin-left:40px;
+
+}
+#header-menu .logo a:hover::after { /*kokotinas*/
+
+    content: "hoj";
+
+}
+#header-menu nav a {
+    text-decoration: none;
+    color:gray;
+
+}
+#header-menu nav a:hover {
+    font-weight: bold;
+    color: black;
+}
+#header-menu span a:hover {
+
+    color: red;
+}
+
+#tours-button ul {
+
+    display: none;
+    position: absolute;
+
+    z-index: 1;
+}
+#tours-button  a {
+    display: block;
+ background: white;
+    padding: 10px;
+  }
+#tours-button:hover ul {
+    display: block;
+    width: 130px;
+    background: white;
+}
+
+.contacts{
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: auto;
+    justify-content: left;
+    display: flex;
+    flex-direction: row-reverse;
+
+}
+.contacts i {
+    color: red;
+    margin:.25rem ;
+}
+
+.contacts span{
+    margin: 5px;
+}
+
+#header-menu li {
+    display: inline-block;
+}
 
 .networks {
-    
+
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: auto;
+    word-spacing: 10px;
+    grid-area: network;
+}
+
+#header-menu nav{
+
+    height: 80px;
+    grid-area: nav;
+    font-size: 14px;
+    row-gap: 20px;
+    justify-content: end;
+    padding-right: 20px;
+    letter-spacing: .05rem;
+    display: inline;
+    border-top: gray solid 2px;
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff;
+}
+
+#header-title {
+    z-index: 1;
+    position: relative;
+    grid-area: 2 / 1 / 5 / 4;
+    height: 80%;
+    min-height: 400px;
+    background-image: url('../img/header.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: justify;
+    -moz-box-shadow: inset 10px 10px 20px #fff;
+    -webkit-box-shadow: inset 10px 10px 20px #fff;
+    box-shadow: inset 10px 10px 20px #fff;
+    border-radius: 5px;
+}
+#header-title p {
+    position: absolute;
+    font-size: 24px;
+    bottom: 10%;
+    right: 15%;
+    width: 400px;
+    white-space: pre;
+    color: Orangered;
+}
+
+#header-title span:first-child{
+    font-size: 52px;
+    color: white;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px;
+}
+#header-title span:nth-child(2){
+    margin-left: 70px;
+}
+
+#header-form {
+    max-width: 1000px;
+    z-index: 2;
+    grid-area: 4 / 2 / 6 / 3;
+    font-size: 14px;
+    margin: 15px;
+    margin-bottom: 100px;
+    word-spacing: 10px;
+    width: 2fr;
+    min-width: 790px;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px;
+}
+
+#header-form input[type=date] {
+    min-width: 125px;
+    width: 15%;
+    border-radius: 5px;
+    height: 40px;
+    border: 2px solid gray;
+    margin: 5px;
+}
+#header-form input[name=persons] {
+
+    border-radius: 5px;
+    height: 40px;
+    border: 2px solid gray;
+    width:auto;
+}
+#header-form input[type=submit]{
+
+    background-color: red;
+    width: 15%;
+    height: 46px;
+    border-radius: 5px;
+    color: white;
+    border: 2px solid gray;
+
+}
+
+#header-form select[name=room]{
+    background-color: white;
+    width: 20%;
+    height: 44px;
+    border-radius: 5px;
+    border: 2px solid gray;
+}
+
+#about {
+    margin-top: -60px;
+    padding:20px;
+    z-index: 0;
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 2fr 0.7fr 1.3fr 2fr;
+    background-image: url('../img/meth.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 60%;
+
+}
+
+#about svg path{
+    fill:gray;
+}
+
+#about img {
+    grid-area: 1 / 1 / 5 / 2;
+    width: 100%;
+    height: auto;
+    float: left;
+    border-radius: 10px;
+    z-index: 3;
+    opacity: 80%;
+}
+
+#about p {
+    grid-area: 3 / 1 / 4 / 3;
+    z-index: 2;
+    padding-left: 43%;
+    text-align: left;
+
+}
+
+#about .heading {
+    padding-left: 43%;
+    padding-top: 10px;
+    grid-area: 2 / 1 / 4 / 3;
+    z-index: 2;
+    background-color: #e8e7e7;
+    line-height: 1;
+}
+
+#about h2 {
+    font-weight: normal;
+    margin: auto;
+}
+
+.heading span{
+    color: red;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.4rem;
+    font-family: Poppins, serif;
+
+}
+#services{
+    background-color:#e8e7e7;
+}
+
+#services .heading{
+    text-align: center;
+    padding-top: 30px;
+}
+
+#services .section-item {
+    display: inline-block;
     margin: 10px;
+    width: 23%;
+    min-width: 250px;
+}
+#services .section-item img{
+   height: 300px;
+    width: 300px;
+}
+
+#tours .heading{
+    margin-top: 40px;
+    text-align: center;
+}
+
+#tours .section-content{
+
+    background-image: url('../img/crystal-ship.svg');
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 40%;
+    margin-bottom: 40px;
+}
+
+#tours .section-item {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    height: 350px;
+}
+
+#tours .section-content .tour-duration:before {
+    content: "\f073 ";
+    font-family: "Font Awesome 6 Free", serif;
+    padding: 10px;
+    color: red;
 
 }
 
-.main-title:visited{
-    color: black;
+#tours .section-content .tour-stars:before {
+    content: "\f005 ";
+    font-family: "Font Awesome 6 Free", serif;
+    padding: 10px;
+    color: red;
+
 }
-.first-letter{
+
+#tours .section-content .tour-price:before {
+    content: "\f15a ";
+    padding: 10px;
+    font-family: "Font Awesome 6 Free", serif;
+    color: red;
+
+}
+
+#tours .section-item img {
+    width: 40%;
+    height: auto;
+    margin: 20px;
+}
+
+#tours .section-item:nth-child(odd) img{
+    float:right;
+    text-align: right;
+}
+
+#tours .section-item:nth-child(odd) {
+    text-align: right;
+}
+
+#tours .section-item:nth-child(even) img{
+    float:left;
+}
+
+#tour2 {
+    border-top: 1px dashed black;
+    border-bottom: 1px dashed black;
+}
+
+#price .heading{
+    text-align: center;
+    row-gap: 10px;
+}
+
+#price .section-content{
+    position: relative;
+    height: 600px;
+}
+
+#price .section-content::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/huel.jpg');
+    background-size: cover;
+    transform: scaleX(-1);
+    z-index: -1;
+    box-shadow: 0 0 50px 50px white inset;
+    opacity: 0.6;
+}
+
+#price .section-item {
+    background: white;
+    width: fit-content;
+    padding: 5px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px;
+    position:relative;
+}
+
+#price .section-item ul > li {
+    list-style: none;
+}
+
+#price .section-item ul > li::before {
+    content: '';
+    background-position: center;
+    display: inline-block;
+    background-image: url('../img/crystal.svg');
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    background-size: 15px;
+
+}
+
+#price .section-item span {
+    display: none;
+}
+
+#price .section-item:hover span {
+    display: flex;
+    position: absolute;
+    top:10%;
+    right:10%;
+}
+
+#price .section-item:first-child{
+    position: absolute;
+    right: 30%;
+}
+
+#price .section-item:nth-child(2){
+    position: absolute;
+    right: 15%;
+    top: 30%
+}
+
+#price .section-item:nth-child(3){
+    position: absolute;
+    right: 5%;
+    top: 65%
+}
+
+#clients .heading{
+    text-align: center;
+    row-gap: 10px;
+}
+
+#clients .section-content{
+
+    background: white;
+}
+
+#clients .section-item{
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    max-width: 986px; /*768 + (1200-768)/2*/
+}
+
+#clients .section-item:first-child{
+    margin-left: 800px;
+    margin-top: 100px
+}
+
+#clients .section-item:first-child blockquote{
+    position:absolute;
+    top: 10%;
+    left:10%;
+}
+
+#clients .section-item:nth-child(2){
+    margin-left: 200px;
+
+}
+
+#clients .section-item:nth-child(2) blockquote{
+    position:absolute;
+
+}
+
+#clients .section-item:nth-child(1) img{
+    border-top-left-radius	   : 100px;	/* Defines the shape of the border of the top-left corner */
+    border-top-right-radius    : 50px;	/* Defines the shape of the border of the top-right corner */
+    border-bottom-right-radius : 100px;	/* Defines the shape of the border of the bottom-right corner */
+    border-bottom-left-radius  : 50px;	/* Defines the shape of the border of the bottom-left corner */
+}
+
+#clients .section-item:nth-child(2) img{
+    border-top-left-radius	   : 50px;	/* Defines the shape of the border of the top-left corner */
+    border-top-right-radius    : 100px;	/* Defines the shape of the border of the top-right corner */
+    border-bottom-right-radius : 50px;	/* Defines the shape of the border of the bottom-right corner */
+    border-bottom-left-radius  : 100px;	/* Defines the shape of the border of the bottom-left corner */
+}
+
+#clients .section-item img{
+    height: 200px;
+    width: 200px;
+}
+
+footer{
+    background-color: #363535;
+    color: white;
+    padding-bottom: 20px;
+    min-width: 768px;
+    width: 100%;
+    padding-left: 10px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+footer h2{
+    letter-spacing: 0.2rem;
+    font-weight: bold;
+}
+footer div{
+
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr ;
+
+    grid-template-areas:
+    "summary links contact";
+
+    margin-bottom: 20px;
+}
+
+#summary {
+    grid-area:summary ;
+
+}
+
+#summary .networks{
+    display: inline-block;
+    margin-left: 15px;
+}
+
+#summary .networks span{
+    border: 1px solid red;
+    padding:10px;
+    margin: -5px;
+}
+
+#links {
+    margin-left: auto;
+    margin-right: auto;
+    grid-area:links;
+}
+#links ul > li {
+    list-style: none;
+
+}
+#links ul> li::before{
+    content: "\3E";
     color: red;
 }
-nav { 
-    font-size: 14px;
-    letter-spacing: .05em;
-    word-spacing: 20px;
-    margin-right: 40px;
+
+#contact {
+
+    grid-area:contact;
+
+}
+#contact form input[type=submit]{
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border: none;
+}
+#contact .contacts {
+
+    display: block;
+    white-space:pre;
+    margin-right:100px;
 }
 
-ul.vertlist li { 
+footer #license {
+    border-top: solid white 2px;
     display: inline-block;
-     }
-ul.tours-button li { 
-        display: block;
-    }
-nav ul li ul {
-    display:none;
-    }
+    min-width: 100%;
+    margin-top:20px;
+    position: relative;
+    overflow: visible;
+}
 
- nav ul li:hover > ul {display:list-item;}
+footer #license span:nth-child(2){
+    position: absolute;
+    left: 90%;
+}
 
- 
