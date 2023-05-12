@@ -1,13 +1,13 @@
 /*
-* Login:xzarsk04
 *
-* Doplnte sve reseni.
+*   Login:xzarsk04
 *
-* Nezapomente pridat strucne hromadne komentare pro pravidla jednotlivych sekci
-* a pro netrivialni useky kodu.
+*   Jmeno:Daniel Zarsky
+*   Projekt: 1.projekt ITW
 */
 
-body{
+
+body {  /* cele telo stranky*/
     width: auto;
     min-width: 768px;
     max-width: 12000px;
@@ -19,29 +19,37 @@ body{
     line-height: 1.5;
 
 }
+/*hlavni sekce*/
 main section{
     margin-top: 50px;
     margin-bottom: 100px;
 }
+/*vsechny obrazky v sekci main se po najeti kurzorem pomalu zvetsi*/
+main img {
+    transition: all .2s ease-in-out;
+}
+main img:hover{
+    transform: scale(1.05);
+
+}
+
+/*nadpisy*/
 .heading{
     line-height: 0.75;
 }
-#heisenberg {
-    display:none;
-}
-.logo {
-    font-family: Bebas Neue, serif;
-    grid-area: logo;
-    height: 80px;
-}
-.contacts {
+.heading span{
+    color: red;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.4rem;
     font-family: Poppins, serif;
 }
 
+/*vsechny nadpisy 2. urovne*/
 h2{
     font-size: 32px;
 }
-
+/*hlavicka*/
 #header {
     display: grid;
     grid-auto-columns: 1fr;
@@ -50,7 +58,7 @@ h2{
     align-content: space-between;
 
 }
-
+/*-----------------------------------cela horni cast hlavicky---------------*/
 #header-menu{
     z-index: 2;
     background-color: white;
@@ -69,11 +77,15 @@ h2{
 }
 #header-menu a {
     text-decoration: none;
-    color:black;
+    color: black;
+}
+/*------------------------------------------------nadpis crossroads-------------------------------------------------*/
+.logo {
+    font-family: Bebas Neue, serif;
+    grid-area: logo;
+    height: 80px;
 }
 .logo {
-    /* písmo: 32px
-    levý okraj: 40px */
     min-height: 80px;
     height: 100%;
     font-size: 32px;
@@ -82,7 +94,7 @@ h2{
     box-shadow: 0 0 10px #fff, 0 0 20px #fff;
 }
 .logo::first-letter {
-
+     /*prvni pismeno*/
     color:red;
 
 }
@@ -90,16 +102,34 @@ h2{
     margin-left:40px;
 
 }
-#header-menu .logo a:hover::after { /*kokotinas*/
-
-    content: "hoj";
+#header-menu .logo a:hover::after {
+    /*toto se zobrazi po najeti*/
+    content: "fail";
 
 }
+/*----------------------------------------------------------------------nabidka menu--------------------------*/
 #header-menu nav a {
     text-decoration: none;
     color:gray;
 
 }
+#header-menu nav{
+
+    height: 80px;
+    grid-area: nav;
+    font-size: 14px;
+    row-gap: 20px;
+    justify-content: end;
+    padding-right: 20px;
+    letter-spacing: .05rem;
+    /*zobraz na radek*/
+    display: inline;
+    /*okraj*/
+    border-top: gray solid 2px;
+    /*rozmazani*/
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff;
+}
+
 #header-menu nav a:hover {
     font-weight: bold;
     color: black;
@@ -108,7 +138,13 @@ h2{
 
     color: red;
 }
-
+#header-menu li {
+    display: inline-block;
+}
+#header-menu li:hover {
+    text-decoration: underline;
+}
+/*--------------------------------------------vysouvaci menu tours--------------------------*/
 #tours-button ul {
 
     display: none;
@@ -126,13 +162,17 @@ h2{
     width: 130px;
     background: white;
 }
-
+/*-------------------------------------------------kontakty--------------------------*/
+.contacts {
+    font-family: Poppins, serif;
+}
 .contacts{
     margin-top: 10px;
     margin-left: 10px;
     margin-right: auto;
     justify-content: left;
     display: flex;
+    /*prehozene poradi*/
     flex-direction: row-reverse;
 
 }
@@ -140,51 +180,34 @@ h2{
     color: red;
     margin:.25rem ;
 }
-
 .contacts span{
     margin: 5px;
 }
-
-#header-menu li {
-    display: inline-block;
-}
-
+/*-------------------------------------------------socialni site---------------------------------*/
 .networks {
-
     margin-top: 10px;
     margin-right: 10px;
     margin-left: auto;
     word-spacing: 10px;
     grid-area: network;
 }
-
-#header-menu nav{
-
-    height: 80px;
-    grid-area: nav;
-    font-size: 14px;
-    row-gap: 20px;
-    justify-content: end;
-    padding-right: 20px;
-    letter-spacing: .05rem;
-    display: inline;
-    border-top: gray solid 2px;
-    box-shadow: 0 0 10px #fff, 0 0 20px #fff;
-}
-
+/*---------------------------------------hlavni cast hlavicky nadpis a obraz za nim--------------------*/
 #header-title {
     z-index: 1;
     position: relative;
     grid-area: 2 / 1 / 5 / 4;
-    height: 80%;
+    max-height: 80%;
+    height:auto;
     min-height: 400px;
     background-image: url('../img/header.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     text-align: justify;
+    /*rozmazani*/
     -moz-box-shadow: inset 10px 10px 20px #fff;
     -webkit-box-shadow: inset 10px 10px 20px #fff;
-    box-shadow: inset 10px 10px 20px #fff;
+    box-shadow: inset 10px 10px 20px #fff
+    /*zaoblene okraje*/
     border-radius: 5px;
 }
 #header-title p {
@@ -196,16 +219,16 @@ h2{
     white-space: pre;
     color: Orangered;
 }
-
 #header-title span:first-child{
     font-size: 52px;
     color: white;
+    /*rozmazani*/
     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px;
 }
 #header-title span:nth-child(2){
     margin-left: 70px;
 }
-
+/*--------------------------------------------------------formular -----------------------------*/
 #header-form {
     max-width: 1000px;
     z-index: 2;
@@ -223,7 +246,6 @@ h2{
     border-radius: 5px;
     box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px;
 }
-
 #header-form input[type=date] {
     min-width: 125px;
     width: 15%;
@@ -249,7 +271,6 @@ h2{
     border: 2px solid gray;
 
 }
-
 #header-form select[name=room]{
     background-color: white;
     width: 20%;
@@ -257,7 +278,7 @@ h2{
     border-radius: 5px;
     border: 2px solid gray;
 }
-
+/*----------------------------------------------------about------------------------------------------------*/
 #about {
     margin-top: -60px;
     padding:20px;
@@ -272,11 +293,10 @@ h2{
     background-size: 60%;
 
 }
-
+/*vypln svg obrazku*/
 #about svg path{
     fill:gray;
 }
-
 #about img {
     grid-area: 1 / 1 / 5 / 2;
     width: 100%;
@@ -284,9 +304,9 @@ h2{
     float: left;
     border-radius: 10px;
     z-index: 3;
+    /*pruhlednost*/
     opacity: 80%;
 }
-
 #about p {
     grid-area: 3 / 1 / 4 / 3;
     z-index: 2;
@@ -294,7 +314,6 @@ h2{
     text-align: left;
 
 }
-
 #about .heading {
     padding-left: 43%;
     padding-top: 10px;
@@ -302,31 +321,30 @@ h2{
     z-index: 2;
     background-color: #e8e7e7;
     line-height: 1;
+    /*pomale zvetseni sekce viz obrazky v mainu */
+    transition: all .2s ease-in-out;
 }
+#about .heading:hover{
+    transform: scale(1.05);
+    background-color: palevioletred;
+    border: solid red 2px;
+    opacity:0.9;
 
+}
 #about h2 {
     font-weight: normal;
     margin: auto;
 }
-
-.heading span{
-    color: red;
-    font-size: 18px;
-    text-transform: uppercase;
-    letter-spacing: 0.4rem;
-    font-family: Poppins, serif;
-
-}
+/*-------------------------------------------------------------services--------------------------------------------*/
 #services{
     background-color:#e8e7e7;
 }
-
 #services .heading{
     text-align: center;
     padding-top: 30px;
 }
-
 #services .section-item {
+    /*zobrazi bloky vedle sebe */
     display: inline-block;
     margin: 10px;
     width: 23%;
@@ -336,43 +354,39 @@ h2{
    height: 300px;
     width: 300px;
 }
-
+#services .section-item h3:hover{
+   text-decoration: underline;
+}
+/*------------------------------------------------------tours---------------------------------------------------*/
 #tours .heading{
     margin-top: 40px;
     text-align: center;
 }
-
 #tours .section-content{
-
     background-image: url('../img/crystal-ship.svg');
     background-repeat: no-repeat;
     background-position: top left;
     background-size: 40%;
     margin-bottom: 40px;
 }
-
 #tours .section-item {
     margin-top: 40px;
     margin-bottom: 20px;
     height: 350px;
 }
-
-#tours .section-content .tour-duration:before {
-    content: "\f073 ";
-    font-family: "Font Awesome 6 Free", serif;
+#tours .section-content .tour-duration:before { /*   ikony!!   */
+    content: "\f073 ";  /*   typ   */
+    font-family: "Font Awesome 6 Free", serif;    /*   zdroj   */
     padding: 10px;
     color: red;
 
 }
-
 #tours .section-content .tour-stars:before {
     content: "\f005 ";
     font-family: "Font Awesome 6 Free", serif;
     padding: 10px;
     color: red;
-
 }
-
 #tours .section-content .tour-price:before {
     content: "\f15a ";
     padding: 10px;
@@ -380,14 +394,12 @@ h2{
     color: red;
 
 }
-
 #tours .section-item img {
     width: 40%;
     height: auto;
     margin: 20px;
 }
-
-#tours .section-item:nth-child(odd) img{
+#tours .section-item:nth-child(odd) img{  /*   kazdy lichy potomek  */
     float:right;
     text-align: right;
 }
@@ -396,15 +408,15 @@ h2{
     text-align: right;
 }
 
-#tours .section-item:nth-child(even) img{
+#tours .section-item:nth-child(even) img{  /*   kazdy sudy potomek  */
     float:left;
 }
 
-#tour2 {
+#tour2 {  /* odedelujici cara  */
     border-top: 1px dashed black;
     border-bottom: 1px dashed black;
 }
-
+/*----------------------------------------------------------------price----------------------------------------*/
 #price .heading{
     text-align: center;
     row-gap: 10px;
@@ -415,7 +427,7 @@ h2{
     height: 600px;
 }
 
-#price .section-content::before {
+#price .section-content::before { /*   takto modifikuju obrazek v pozadi  */
     content: '';
     position: absolute;
     width: 100%;
@@ -426,8 +438,13 @@ h2{
     z-index: -1;
     box-shadow: 0 0 50px 50px white inset;
     opacity: 0.6;
-}
 
+}
+/*zvetseni pozadi*/
+#price .section-content:hover{
+    transition: all .2s ease-in-out;
+    transform: scale(1.05);
+}
 #price .section-item {
     background: white;
     width: fit-content;
@@ -435,12 +452,12 @@ h2{
     border-radius: 20px;
     box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px;
     position:relative;
+    transition: all .2s ease-in-out;
 }
-
 #price .section-item ul > li {
     list-style: none;
 }
-
+/*ikona misto tecky v seznamu*/
 #price .section-item ul > li::before {
     content: '';
     background-position: center;
@@ -452,92 +469,147 @@ h2{
     background-size: 15px;
 
 }
-
+#price .section-item:hover ul > li::before {
+    content: '';
+    background-position: center;
+    display: inline-block;
+    background-image: url('../img/crystal-blue.svg');
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    background-size: 15px;
+}
+/*zobrazeni ceny*/
 #price .section-item span {
     display: none;
 }
-
 #price .section-item:hover span {
     display: flex;
     position: absolute;
+    color: blue;
+    font-weight: bold;
     top:10%;
     right:10%;
 }
+#price .section-item:hover h3{
+    text-decoration: underline;
+}
 
+#price .section-item:hover { /*zvetseni elementu*/
+    transform: scale(1.05);
+}
 #price .section-item:first-child{
     position: absolute;
     right: 30%;
 }
-
-#price .section-item:nth-child(2){
+#price .section-item:nth-child(2){ /*2. potomek*/
     position: absolute;
     right: 15%;
     top: 30%
 }
-
 #price .section-item:nth-child(3){
     position: absolute;
     right: 5%;
     top: 65%
 }
-
+/*---------------------------------------------------clients=-----------------------------------------------*/
 #clients .heading{
     text-align: center;
     row-gap: 10px;
 }
-
 #clients .section-content{
-
     background: white;
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
 }
-
-#clients .section-item{
-    position: relative;
+#clients .section-item {
+    position:relative;
     margin-top: 40px;
     margin-bottom: 40px;
     max-width: 986px; /*768 + (1200-768)/2*/
 }
-
-#clients .section-item:first-child{
-    margin-left: 800px;
-    margin-top: 100px
+#clients blockquote:hover { /*bublina */
+    background-color: palevioletred;
+    border: red solid 2px;
 }
 
+#clients .section-item:first-child{  /*1. hlava plus bublina */
+    grid-area: 1 / 1 / 2 / 3;
+}
+#clients .section-item:first-child img {
+    float: right;
+    opacity: 0.8;
+    grid-area: 1 / 2 / 2 / 3;
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 10), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#clients .section-item:first-child blockquote::after{  /*mala bublina */
+    content: "";
+    position: absolute;
+    left: 70%;
+    top: 30%;
+    padding: 15px 35px;
+    background-color: #e8e7e7;
+    border-radius: 20px 65px 20px  65px / 30px 50px 30px 50px;
+}
 #clients .section-item:first-child blockquote{
-    position:absolute;
-    top: 10%;
-    left:10%;
-}
-
-#clients .section-item:nth-child(2){
+    float: left;
     margin-left: 200px;
-
+    grid-area: 1 / 1 / 2 / 2;
+    background-color: #e8e7e7;
+    padding: 30px 130px;
+    border-radius: 20px 650px 20px  650px /  30px 50px 30px 50px;
 }
 
+#clients .section-item:nth-child(2){  /*2. hlava plus bublina */
+    grid-area: 2 / 1 / 3 / 3;
+}
+#clients .section-item:nth-child(2) img {
+    grid-area: 2 / 1 / 3 / 2;
+    opacity: 0.8;
+    margin-left: 180px;
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 10), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+#clients .section-item:nth-child(2) blockquote::before {  /*mala bublina */
+    content: "";
+    position: absolute;
+    right:55%;
+    top: 30%;
+    padding: 15px 35px;
+    background-color: #e8e7e7;
+    border-radius:  65px 20px  65px 20px/  50px 30px 50px 30px;
+}
 #clients .section-item:nth-child(2) blockquote{
-    position:absolute;
+    float:right;
 
+    grid-area: 2 / 2 / 3 / 3;
+    background-color: #e8e7e7;
+        padding: 30px 105px;
+        border-radius: 650px 20px 650px 20px / 50px 30px 50px 30px;
 }
-
+/*orezani obrazku*/
 #clients .section-item:nth-child(1) img{
-    border-top-left-radius	   : 100px;	/* Defines the shape of the border of the top-left corner */
-    border-top-right-radius    : 50px;	/* Defines the shape of the border of the top-right corner */
-    border-bottom-right-radius : 100px;	/* Defines the shape of the border of the bottom-right corner */
-    border-bottom-left-radius  : 50px;	/* Defines the shape of the border of the bottom-left corner */
+    border-top-left-radius	   : 100px;
+    border-top-right-radius    : 50px;
+    border-bottom-right-radius : 100px;
+    border-bottom-left-radius  : 50px;
 }
 
-#clients .section-item:nth-child(2) img{
-    border-top-left-radius	   : 50px;	/* Defines the shape of the border of the top-left corner */
-    border-top-right-radius    : 100px;	/* Defines the shape of the border of the top-right corner */
-    border-bottom-right-radius : 50px;	/* Defines the shape of the border of the bottom-right corner */
-    border-bottom-left-radius  : 100px;	/* Defines the shape of the border of the bottom-left corner */
+#clients .section-item:nth-child(2) img {
+    border-top-left-radius: 50px;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 100px;
 }
 
-#clients .section-item img{
+#clients .section-item img {
     height: 200px;
     width: 200px;
 }
-
+/*---------------------------------------------footeer--------------------------------------------*/
 footer{
     background-color: #363535;
     color: white;
@@ -546,7 +618,6 @@ footer{
     width: 100%;
     padding-left: 10px;
 }
-
 footer a {
     color: white;
     text-decoration: none;
@@ -556,7 +627,6 @@ footer h2{
     font-weight: bold;
 }
 footer div{
-
     display: grid;
     grid-auto-columns: 1fr;
     grid-template-columns: 1fr 1fr 1fr;
@@ -567,23 +637,24 @@ footer div{
 
     margin-bottom: 20px;
 }
-
 #summary {
     grid-area:summary ;
-
 }
-
 #summary .networks{
     display: inline-block;
     margin-left: 15px;
 }
-
 #summary .networks span{
     border: 1px solid red;
     padding:10px;
     margin: -5px;
 }
-
+#summary .networks span:hover{
+    border: 1px solid red;
+    background-color: palevioletred;
+    padding:10px;
+    margin: -5px;
+}
 #links {
     margin-left: auto;
     margin-right: auto;
@@ -591,13 +662,11 @@ footer div{
 }
 #links ul > li {
     list-style: none;
-
 }
-#links ul> li::before{
+#links ul> li::before {/* menu s sipkama*/
     content: "\3E";
     color: red;
 }
-
 #contact {
 
     grid-area:contact;
@@ -613,9 +682,12 @@ footer div{
 
     display: block;
     white-space:pre;
+    text-align: left;
     margin-right:100px;
 }
-
+#contact .contacts a:hover {
+    color:red
+}
 footer #license {
     border-top: solid white 2px;
     display: inline-block;
@@ -624,9 +696,61 @@ footer #license {
     position: relative;
     overflow: visible;
 }
-
 footer #license span:nth-child(2){
     position: absolute;
     left: 90%;
 }
+/*---------------------------------------------------------js prvky -------------------------------------------*/
+/*sipka scroll up*/
+#jesse {
+    visibility: hidden;
+    color: orangered;
+    font-family: Font Awesome, serif;
+    bottom: 10px;
+    right: 10px;
+    position:fixed;
+    border: 1px solid orangered;
+    padding: 15px 15px;
+}
+html.scrolled #jesse{
+    visibility: visible;
+}
+/*----------------------------------------------vyskakovaci okno---------------------------------------*/
+#heisenberg {
+    visibility: hidden;
+    z-index: 3;
+    background-color: blue;
+    position: fixed;
+    display: flex;
+    top: 100px;
+    height: 120px;
+    width: 300px;
+    right: 40%;
+    transition: ease-in 1s;
+    border: 2px solid white;
+    border-radius: 20px;
+    box-shadow: 0 0 8px 8px blue;
+}
 
+#heisenberg img {
+    float: left;
+    height: 80%;
+}
+#heisenberg div span {
+    color: white;
+    font-family: Poppins, serif;
+}
+#heisenberg div {
+    padding-left: 20px;
+}
+
+#heisenberg.open { /* zobrazeni okna*/
+    top: 40px;
+    visibility: visible;
+
+}
+#heisenberg span:first-child{
+    align-content: center;
+    text-transform: uppercase;
+    justify-content: center;
+}
